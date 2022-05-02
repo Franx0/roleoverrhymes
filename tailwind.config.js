@@ -6,6 +6,14 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}'
   ],
+  theme: {
+    extend: {
+      fontFamily: {
+        roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
+        rancho: ['Rancho', 'cursive'],
+      },
+    },
+  },
   variants: {},
   plugins: [],
 }

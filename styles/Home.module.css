@@ -3,6 +3,7 @@
 }
 
 .main {
+  @apply font-roboto;
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
@@ -28,18 +29,23 @@
   flex-grow: 1;
 }
 
-.title a {
+.purchase {
+  font-size: 1.5rem;
+}
+
+.purchase a {
   color: #0070f3;
   text-decoration: none;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
+.purchase a:hover,
+.purchase a:focus,
+.purchase a:active {
   text-decoration: underline;
 }
 
 .title {
+  @apply font-rancho;
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
@@ -47,7 +53,7 @@
 
 .title,
 .description {
-  text-align: justify;
+  text-align: center;
 }
 
 .description {
