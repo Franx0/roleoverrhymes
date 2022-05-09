@@ -7,16 +7,17 @@ body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind colors;
+
+.book.title {
+  @apply text-roleover;
+  @apply font-rancho;
+  @apply text-4xl;
+}
+
+.link.available {
+  @apply text-roleover hover:text-indigo-600 focus:text-indigo-600;
+}
