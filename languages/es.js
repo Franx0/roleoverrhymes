@@ -4,7 +4,7 @@ const es = {
     <br /> \
     <p>El nuevo libro de rimas para niños de Suzanne Sasse y June Laurie enseña empoderamiento y aceptación.</p> \
     <br /> \
-    <p><span class="book title">Role Over Rhymes</span> es un colección de diez rimas alternativas de cuentos populares que incluyen personajes renovados y adaptados, giros argumentales, humor, ambientaciones más actuales y mucha magia! Suzanne Sasse y la ilustradora, June Laurie, actualizan estos cuentos clásicos a los lectores más jovenes..</p> \
+    <p><span class="book title">Role Over Rhymes</span> es un colección de diez rimas alternativas de cuentos populares que incluyen personajes renovados y adaptados, giros argumentales, humor, ambientaciones más actuales y ¡mucha magia! Suzanne Sasse y la ilustradora, June Laurie, actualizan estos cuentos clásicos a los lectores más jovenes..</p> \
   `,
   available: ` \
     Disponible en:&nbsp; \
