@@ -17,7 +17,7 @@ const Home: NextPage<NextPageContext> = (props: any) => {
           <div className="max-w-3xl m-auto leading-8" dangerouslySetInnerHTML={{__html: props.dictionary.description}}></div>
         </section>
         <section id="trailer" className="w-full flex-wrap md:flex-col md:w-full p-10 text-justify place-content-center bg-roleover">
-          <iframe className="h-96 w-full m-auto" width="60%" height="60%" src="https://player.vimeo.com/video/705165609?h=a253245fd0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allowFullScreen title="Book Trailer"></iframe>
+          <iframe className="h-96 w-full m-auto" loading="lazy" width="60%" height="60%" src="https://player.vimeo.com/video/705165609?h=a253245fd0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameBorder="0" allowFullScreen title="Book Trailer"></iframe>
         </section>
         <section id="available" className="w-full flex-wrap md:flex-col md:w-full p-10 text-justify place-content-center">
           <div className="max-w-3xl m-auto" dangerouslySetInnerHTML={{__html: props.dictionary.available}}></div>
