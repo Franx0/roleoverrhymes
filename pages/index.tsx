@@ -9,7 +9,9 @@ const Home: NextPage<NextPageContext> = (props: any) => {
         <title>Role Over Rhymes</title>
         <meta name="description" content="Role Over Rhymes official site" />
         <meta name="google-site-verification" content="LzptzhkWiTnD7rA7wangYq6fTqRoiptdPGwco8gIibs" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
       </Head>
 
       <main className="min-h-screen flex flex-col px-0 items-center text-2xl font-roboto">
