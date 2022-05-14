@@ -16,6 +16,9 @@ const es = {
     &nbsp; \
     <span class="link available"><a href=https://www.amazon.es/Role-Over-Rhymes-Suzanne-Sasse/dp/1803130822/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3U41N1KJRGDGW&keywords=Role+Over+Rhymes&qid=1651523446&sprefix=role+over+rhyme%2Caps%2C827&sr=8-1 rel="noreferrer" target="_blank">Amazon ES</a></span> \
   `,
+  booktrailer: `Booktrailer`,
+  gallery: `Galería`,
+  genieTale: `The Genie`,
   footer: {
     handmade: `<span>Diseñado y desarrollado por: </span><span>Ana Mejón&nbsp;y&nbsp<a title="Role Over Rhymes" target="_blank" href=https://github.com/Franx0/roleoverrhymes>&nbsp;Fran Moya</a></span>`
   },

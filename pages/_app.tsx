@@ -1,4 +1,5 @@
-import '../styles/globals.css';
+import '@/styles/globals.css';
+import '@/styles/swiper.css';
 import type { AppProps } from 'next/app';
 
 // React
