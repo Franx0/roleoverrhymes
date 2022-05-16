@@ -1,6 +1,7 @@
 const es = {
   meta: {
     url: `https://www.roleoverhymes.com`,
+    imageUrl: `https://drive.google.com/uc?export=view&id=1bNbHc_w4bkJzn0eDsDe18za0P2zVwSzR`,
     title: `Role Over Rhymes`,
     description: `Role Over Rhymes sitio oficial`,
     author: `Suzanne Sasse`,

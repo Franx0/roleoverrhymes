@@ -10,7 +10,6 @@ import Image from '@/components/shared/Image'
 import resources from "@/resources/index";
 
 const Home: NextPage<NextPageContext> = (props: any) => {
-  const defaultImageUrl: string = "./images/role_over_rhymes.png";
   const { dictionary }: { dictionary: any } = props;
   const { photoSrcs, bookTrailerVideoSrc, genieVideoSrc } : {
     photoSrcs: any;
@@ -39,19 +38,19 @@ const Home: NextPage<NextPageContext> = (props: any) => {
         <meta name="google-site-verification" content="LzptzhkWiTnD7rA7wangYq6fTqRoiptdPGwco8gIibs" />
         <meta itemProp="name" content={dictionary.meta.title} key="title" />
         <meta itemProp="description" content={dictionary.meta.description} key="desc" />
-        <meta itemProp="image" content={defaultImageUrl} key="image" />
+        <meta itemProp="image" content={dictionary.meta.imageUrl} key="image" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" key="ogtype" />
         <meta property="og:url" content={dictionary.meta.url} key="ogurl" />
-        <meta property="og:image" content={defaultImageUrl} key="ogimage" />
+        <meta property="og:image" content={dictionary.meta.imageUrl} key="ogimage" />
         <meta property="og:title" content={dictionary.meta.title} key="ogtitle" />
         <meta property="og:description" content={dictionary.meta.description} key="ogdesc" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" key="twcard" />
         <meta property="twitter:url" content={dictionary.meta.url} />
-        <meta name="twitter:image" content={defaultImageUrl} key="twimage" />
+        <meta name="twitter:image" content={dictionary.meta.imageUrl} key="twimage" />
         <meta name="twitter:title" content={dictionary.meta.title} key="twtitle" />
         <meta name="twitter:description" content={dictionary.meta.description} key="twdesc" />
 
