@@ -1,4 +1,11 @@
 const en = {
+  meta: {
+    url: `https://www.roleoverhymes.com`,
+    title: `Role Over Rhymes`,
+    description: `Role Over Rhymes official site`,
+    author: `Suzanne Sasse`,
+    keywords: `tales, rhymes, child, children, childhood`,
+  },
   description: ` \
     <p><span class="book title">Role Over Rhymes</span>, a book that puts a spin on the fairy-tale classics!</p> \
     <br /> \
