@@ -1,4 +1,12 @@
 const es = {
+  meta: {
+    url: `https://www.roleoverhymes.com`,
+    imageUrl: `https://drive.google.com/uc?export=view&id=1bNbHc_w4bkJzn0eDsDe18za0P2zVwSzR`,
+    title: `Role Over Rhymes`,
+    description: `Role Over Rhymes sitio oficial`,
+    author: `Suzanne Sasse`,
+    keywords: `cuentos, rimas, niño, niños, niña, niñas, infantil`,
+  },
   description: ` \
     <p><span class="book title">Role Over Rhymes</span>, ¡un libro que da un giro a los clásicos cuentos populares!</p> \
     <br /> \

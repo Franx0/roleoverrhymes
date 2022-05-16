@@ -10,13 +10,13 @@ import Image from '@/components/shared/Image'
 import resources from "@/resources/index";
 
 const Home: NextPage<NextPageContext> = (props: any) => {
-  const { dictionary } = props;
+  const { dictionary }: { dictionary: any } = props;
   const { photoSrcs, bookTrailerVideoSrc, genieVideoSrc } : {
     photoSrcs: any;
     bookTrailerVideoSrc: string,
     genieVideoSrc: string
   } = resources;
-  const photos =  Object.keys(photoSrcs).map( (key: string) => {
+  const photos: Array<any> =  Object.keys(photoSrcs).map( (key: string) => {
     return (
       <div key={key} className="relative">
         <Image key={`photo-${key}`} alt={`photo-${key}`} className="w-full md:h-96 h-auto" src={photoSrcs[key]} />
@@ -27,9 +27,33 @@ const Home: NextPage<NextPageContext> = (props: any) => {
   return (
     <div>
       <Head>
-        <title>Role Over Rhymes</title>
-        <meta name="description" content="Role Over Rhymes official site" />
+        <title>Role Over Rhymes</title><meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+        <meta name="author" content="Francisco Moya" />
+        <meta name="description" content={dictionary.meta.description} />
+        <meta name="keywords" content={dictionary.meta.keywords} />
+        <meta name="robots" content="index,follow" />
+
+        {/* Google */}
         <meta name="google-site-verification" content="LzptzhkWiTnD7rA7wangYq6fTqRoiptdPGwco8gIibs" />
+        <meta itemProp="name" content={dictionary.meta.title} key="title" />
+        <meta itemProp="description" content={dictionary.meta.description} key="desc" />
+        <meta itemProp="image" content={dictionary.meta.imageUrl} key="image" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" key="ogtype" />
+        <meta property="og:url" content={dictionary.meta.url} key="ogurl" />
+        <meta property="og:image" content={dictionary.meta.imageUrl} key="ogimage" />
+        <meta property="og:title" content={dictionary.meta.title} key="ogtitle" />
+        <meta property="og:description" content={dictionary.meta.description} key="ogdesc" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" key="twcard" />
+        <meta property="twitter:url" content={dictionary.meta.url} />
+        <meta name="twitter:image" content={dictionary.meta.imageUrl} key="twimage" />
+        <meta name="twitter:title" content={dictionary.meta.title} key="twtitle" />
+        <meta name="twitter:description" content={dictionary.meta.description} key="twdesc" />
+
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
       </Head>
