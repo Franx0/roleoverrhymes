@@ -38,21 +38,21 @@ const Home: NextPage<NextPageContext> = (props: any) => {
         <section id="description" className="w-full flex-wrap flex-col w-full p-16 md:text-justify place-content-center">
           <div className="max-w-3xl m-auto leading-8" dangerouslySetInnerHTML={{__html: dictionary.description}}></div>
         </section>
-        <section id="trailer" className="w-full flex-wrap flex-col w-full p-10 text-justify place-content-center bg-roleover">
-          <h2 className="text-center text-white mb-6 font-rancho text-4xl">{dictionary.booktrailer}</h2>
-          <iframe className="h-96 w-full m-auto" loading="lazy" width="60%" height="60%" src={bookTrailerVideoSrc} frameBorder="0" allowFullScreen title="Book Trailer"></iframe>
+        <section id="trailer" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center bg-roleover">
+          <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl">{dictionary.booktrailer}</h2>
+          <iframe className="h-60 md:h-96 w-full m-auto" loading="lazy" width="60%" height="30%" src={bookTrailerVideoSrc} frameBorder="0" allowFullScreen title="Book Trailer"></iframe>
         </section>
-        <section id="photos" className="w-full flex-wrap flex-col w-full p-16 md:text-justify place-content-center">
-          <h2 className="text-center text-roleover mb-6 font-rancho text-4xl">{dictionary.gallery}</h2>
+        <section id="photos" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 md:text-justify place-content-center">
+          <h2 className="text-center text-roleover pt-2 pb-4 md:pt-0 my-2 md:mb-6 font-rancho text-4xl">{dictionary.gallery}</h2>
           <PhotoSlider styles={{width: "97%"}} slides={photos} />
         </section>
-        <section id="available" className="w-full flex-wrap flex-col w-full p-10 text-justify place-content-center">
+        <section id="available" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center">
           <div className="flex md:flex-row flex-col md:max-w-3xl md:w-full sm:w-1/2 content-justify content-center text-center m-auto " dangerouslySetInnerHTML={{__html: dictionary.available}}></div>
         </section>
-        <section id="genie-tale" className="w-full flex-wrap flex-col w-full p-10 text-justify place-content-center bg-complementary">
-          <h2 className="text-center text-white mb-6 font-rancho text-4xl">{dictionary.genieTale}</h2>
+        <section id="genie-tale" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center bg-complementary">
+          <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl">{dictionary.genieTale}</h2>
           <div className="flex-wrap md:flex-row flex-col">
-            <iframe className="h-96 w-full" loading="lazy" width="60%" height="60%" src={genieVideoSrc} frameBorder="0" allowFullScreen title="Genie Trailer"></iframe>
+            <iframe className="h-60 md:h-96 w-full" loading="lazy" width="60%" height="30%" src={genieVideoSrc} frameBorder="0" allowFullScreen title="Genie Trailer"></iframe>
           </div>
         </section>
       </main>
