@@ -5,9 +5,45 @@ import { default as PhotoSlider } from '@/components/Slider';
 
 // Components
 import Image from '@/components/shared/Image'
+import PositionedImages from '@/components/PositionedImages'
 
 // Import Resources
 import resources from "@/resources/index";
+
+const Stars: Array<any> = [
+  {
+    url: "/images/star1.png",
+    class: "star-1 top-20 left-36 animate-pulse-slow-3"
+  },
+  {
+    url: "/images/star1.png",
+    class: "star-1 top-56 right-48 animate-pulse-slow-4"
+  },
+  {
+    url: "/images/star2.png",
+    class: "star-2 top-80 left-80 animate-pulse"
+  },
+  {
+    url: "/images/star2.png",
+    class: "w-4 star-2 top-96 right-60 animate-pulse"
+  },
+  {
+    url: "/images/star2.png",
+    class: "star-2 top-24 right-80 animate-pulse"
+  },
+  {
+    url: "/images/star3.png",
+    class: "star-3 top-72 left-12 animate-pulse"
+  },
+  {
+    url: "/images/star4.png",
+    class: "w-10 star-4 top-3 left-96 animate-pulse-slow-3"
+  },
+  {
+    url: "/images/star4.png",
+    class: "star-4 top-3 right-10 animate-pulse-slow-4"
+  }
+];
 
 const Home: NextPage<NextPageContext> = (props: any) => {
   const { dictionary }: { dictionary: any } = props;
@@ -59,7 +95,10 @@ const Home: NextPage<NextPageContext> = (props: any) => {
       </Head>
 
       <main className="flex flex-col px-0 items-center text-2xl font-roboto">
-        <section id="description" className="w-full flex-wrap flex-col w-full p-16 md:text-justify place-content-center">
+        {/* <section id="stars" className="w-full flex relative">
+        </section> */}
+        <section id="description" className="w-full relative flex-wrap flex-col w-full p-16 md:text-justify place-content-center">
+          <PositionedImages images={Stars} />
           <div className="max-w-3xl m-auto leading-8" dangerouslySetInnerHTML={{__html: dictionary.description}}></div>
         </section>
         <section id="trailer" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center bg-roleover">
