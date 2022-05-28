@@ -13,35 +13,35 @@ import resources from "@/resources/index";
 const Stars: Array<any> = [
   {
     url: "/images/star1.png",
-    class: "star-1 top-20 left-36 animate-pulse-slow-3"
+    class: "star-1 top-1 left-4 md:top-20 lg:left-36 animate-pulse-slow-3 z-0"
   },
   {
     url: "/images/star1.png",
-    class: "star-1 top-56 right-48 animate-pulse-slow-4"
+    class: "star-1 right-2 top-56 md:right-48 animate-pulse-slow-4 z-0"
   },
   {
     url: "/images/star2.png",
-    class: "star-2 top-80 left-80 animate-pulse"
+    class: "star-2 left-24 bottom-4 md:left-80 2xl:top-80 animate-pulse z-0"
   },
   {
     url: "/images/star2.png",
-    class: "w-4 star-2 top-96 right-60 animate-pulse"
+    class: "w-4 star-2 bottom-0 lg:top-96 right-10 md:right-24 xl:right-60 animate-pulse z-0"
   },
   {
     url: "/images/star2.png",
-    class: "star-2 top-24 right-80 animate-pulse"
+    class: "star-2 top-32 right-36 lg:top-24 lg:right-80 animate-pulse z-0"
   },
   {
     url: "/images/star3.png",
-    class: "star-3 top-72 left-12 animate-pulse"
+    class: "star-3 top-96 lg:top-72 left-0 lg:left-12 animate-pulse z-0"
   },
   {
     url: "/images/star4.png",
-    class: "w-10 star-4 top-3 left-96 animate-pulse-slow-3"
+    class: "w-10 star-4 top-3 left-36 lg:left-96 animate-pulse-slow-3 z-0"
   },
   {
     url: "/images/star4.png",
-    class: "star-4 top-3 right-10 animate-pulse-slow-4"
+    class: "star-4 top-3 right-10 animate-pulse-slow-4 z-0"
   }
 ];
 
@@ -97,28 +97,28 @@ const Home: NextPage<NextPageContext> = (props: any) => {
       <main className="flex flex-col px-0 items-center text-2xl font-roboto">
         <section id="description" className="w-full relative flex-wrap flex-col w-full p-16 md:text-justify place-content-center">
           <PositionedImages images={Stars} />
-          <div className="max-w-3xl m-auto leading-8" dangerouslySetInnerHTML={{__html: dictionary.description}}></div>
+          <div className="max-w-3xl m-auto leading-8 z-10 relative" dangerouslySetInnerHTML={{__html: dictionary.description}}></div>
         </section>
         <section id="trailer" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center bg-roleover">
-          <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl">{dictionary.booktrailer}</h2>
-          <iframe className="h-60 md:h-96 w-full m-auto" loading="lazy" width="60%" height="30%" src={bookTrailerVideoSrc} frameBorder="0" allowFullScreen title="Book Trailer"></iframe>
+          <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.booktrailer}</h2>
+          <iframe className="h-60 md:h-96 w-full m-auto z-10 relative" loading="lazy" width="60%" height="30%" src={bookTrailerVideoSrc} frameBorder="0" allowFullScreen title="Book Trailer"></iframe>
         </section>
         <section id="photos" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 md:text-justify place-content-center">
-          <h2 className="text-center text-roleover pt-2 pb-4 md:pt-0 my-2 md:mb-6 font-rancho text-4xl">{dictionary.gallery}</h2>
-          <PhotoSlider styles={{width: "97%"}} slides={photos} />
+          <h2 className="text-center text-roleover pt-2 pb-4 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.gallery}</h2>
+          <PhotoSlider className="z-10 relative" styles={{width: "97%"}} slides={photos} />
         </section>
         <section id="available" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center">
-          <div className="flex md:flex-row flex-col md:max-w-3xl md:w-full sm:w-1/2 content-justify content-center text-center m-auto " dangerouslySetInnerHTML={{__html: dictionary.available}}></div>
+          <div className="flex md:flex-row flex-col md:max-w-3xl md:w-full sm:w-1/2 content-justify content-center text-center m-auto z-10 relative" dangerouslySetInnerHTML={{__html: dictionary.available}}></div>
         </section>
         <section id="genie-tale" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center bg-complementary">
-          <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl">{dictionary.genieTale}</h2>
-          <div className="flex-wrap md:flex-row flex-col">
+          <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.genieTale}</h2>
+          <div className="flex-wrap md:flex-row flex-col z-10 relative">
             <iframe className="h-60 md:h-96 w-full" loading="lazy" width="60%" height="30%" src={genieVideoSrc} frameBorder="0" allowFullScreen title="Genie Trailer"></iframe>
           </div>
         </section>
       </main>
 
-      <footer className="flex border-t p-4 px-5 md:items-center md:justify-between font-roboto" dangerouslySetInnerHTML={{__html: dictionary.footer.handmade}}></footer>
+      <footer className="flex border-t p-4 px-5 md:items-center md:justify-between font-roboto z-10 relative" dangerouslySetInnerHTML={{__html: dictionary.footer.handmade}}></footer>
     </div>
   )
 }
