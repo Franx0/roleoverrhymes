@@ -18,6 +18,10 @@ body {
   @apply text-4xl;
 }
 
-.link.available {
-  @apply text-roleover hover:text-indigo-600 focus:text-indigo-600;
+.button {
+  @apply max-w-fit h-min whitespace-nowrap px-2 border border-2 border-roleover shadow
+}
+
+.button.available {
+  @apply text-roleover hover:bg-roleover focus:bg-roleover hover:text-white focus:text-white rounded-full;
 }

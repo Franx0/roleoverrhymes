@@ -1,4 +1,9 @@
 const resources = {
+  contact: {
+    name: `Suzanne Sasse`,
+    mobile_number: `+34 659929036`,
+    email: `sassesasse@icloud.com`
+  },
   photoSrcs: {
     '0': 'https://drive.google.com/uc?export=view&id=1bNbHc_w4bkJzn0eDsDe18za0P2zVwSzR',
     '1': 'https://drive.google.com/uc?export=view&id=1F9LwFtFwQU2vfK_UIm4VO-qKvq4eRiqF',

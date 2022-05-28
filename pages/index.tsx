@@ -95,25 +95,36 @@ const Home: NextPage<NextPageContext> = (props: any) => {
       </Head>
 
       <main className="flex flex-col px-0 items-center text-2xl font-roboto">
-        <section id="description" className="w-full relative flex-wrap flex-col w-full p-16 md:text-justify place-content-center">
+        <section id="description" className="w-full relative flex-wrap flex-col p-16 md:text-justify place-content-center">
           <PositionedImages images={Stars} />
           <div className="max-w-3xl m-auto leading-8 z-10 relative" dangerouslySetInnerHTML={{__html: dictionary.description}}></div>
         </section>
-        <section id="trailer" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center bg-roleover">
+        <section id="available" className="w-full flex-wrap flex-col mb-4 p-2 md:p-6 text-justify place-content-center">
+          <div className="flex 2xl:flex-row flex-col w-1/2 relative m-auto content-justify content-center align-middle items-center text-center z-10" dangerouslySetInnerHTML={{__html: dictionary.available}}></div>
+        </section>
+        <section id="trailer" className="w-full flex-wrap flex-col mt-3 p-2 md:p-6 text-justify place-content-center bg-roleover">
           <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.booktrailer}</h2>
           <iframe className="h-60 md:h-96 w-full m-auto z-10 relative" loading="lazy" width="60%" height="30%" src={bookTrailerVideoSrc} frameBorder="0" allowFullScreen title="Book Trailer"></iframe>
         </section>
-        <section id="photos" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 md:text-justify place-content-center">
+        <section id="photos" className="w-full flex-wrap flex-col mt-3 p-2 md:p-6 md:text-justify place-content-center">
           <h2 className="text-center text-roleover pt-2 pb-4 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.gallery}</h2>
           <PhotoSlider className="z-10 relative" styles={{width: "97%"}} slides={photos} />
         </section>
-        <section id="available" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center">
-          <div className="flex md:flex-row flex-col md:max-w-3xl md:w-full sm:w-1/2 content-justify content-center text-center m-auto z-10 relative" dangerouslySetInnerHTML={{__html: dictionary.available}}></div>
-        </section>
-        <section id="genie-tale" className="w-full flex-wrap flex-col w-full mt-3 p-2 md:p-6 text-justify place-content-center bg-complementary">
+        <section id="genie-tale" className="w-full flex-wrap flex-col mt-3 p-2 md:p-6 text-justify place-content-center bg-complementary">
           <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.genieTale}</h2>
           <div className="flex-wrap md:flex-row flex-col z-10 relative">
             <iframe className="h-60 md:h-96 w-full" loading="lazy" width="60%" height="30%" src={genieVideoSrc} frameBorder="0" allowFullScreen title="Genie Trailer"></iframe>
+          </div>
+        </section>
+        <section id="contact" className="w-full relative flex-wrap flex-col overflow-hidden mt-3 p-2 md:p-6 text-justify place-content-center">
+          <PositionedImages images={Stars} />
+          <div className="md:w-1/4 w-1/2 h-full m-auto flex leading-8 font-rancho">
+            <Image id="genie-image" alt="genie" className="w-auto hidden md:flex" src="/images/genie.png" />
+            <div className="w-auto m-auto p-2 bg-white z-10">
+              <p className="my-2 text-4xl">{resources.contact.name}</p>
+              <p className="my-2 text-2xl">{resources.contact.mobile_number}</p>
+              <p className="my-2 text-3xl">{resources.contact.email}</p>
+            </div>
           </div>
         </section>
       </main>

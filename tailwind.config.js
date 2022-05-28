@@ -19,6 +19,9 @@ module.exports = {
         roleover: '#bc609b',
         complementary: '#60bc81',
       },
+      borderColor: {
+        roleover: '#bc609b',
+      },
       backgroundImage: {
         'star-1': "url('/images/star1.png')",
         'star-2': "url('/images/star2.png')",
