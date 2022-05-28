@@ -9,41 +9,7 @@ import PositionedImages from '@/components/PositionedImages'
 
 // Import Resources
 import resources from "@/resources/index";
-
-const Stars: Array<any> = [
-  {
-    url: "/images/star1.png",
-    class: "star-1 top-1 left-4 md:top-20 lg:left-36 animate-pulse-slow-3 z-0"
-  },
-  {
-    url: "/images/star1.png",
-    class: "star-1 right-2 top-56 md:right-48 animate-pulse-slow-4 z-0"
-  },
-  {
-    url: "/images/star2.png",
-    class: "star-2 left-24 bottom-4 md:left-80 2xl:top-80 animate-pulse z-0"
-  },
-  {
-    url: "/images/star2.png",
-    class: "w-4 star-2 bottom-0 lg:top-96 right-10 md:right-24 xl:right-60 animate-pulse z-0"
-  },
-  {
-    url: "/images/star2.png",
-    class: "star-2 top-32 right-36 lg:top-24 lg:right-80 animate-pulse z-0"
-  },
-  {
-    url: "/images/star3.png",
-    class: "star-3 top-96 lg:top-72 left-0 lg:left-12 animate-pulse z-0"
-  },
-  {
-    url: "/images/star4.png",
-    class: "w-10 star-4 top-3 left-36 lg:left-96 animate-pulse-slow-3 z-0"
-  },
-  {
-    url: "/images/star4.png",
-    class: "star-4 top-3 right-10 animate-pulse-slow-4 z-0"
-  }
-];
+import Stars from "@/resources/stars";
 
 const Home: NextPage<NextPageContext> = (props: any) => {
   const { dictionary }: { dictionary: any } = props;
@@ -102,7 +68,7 @@ const Home: NextPage<NextPageContext> = (props: any) => {
         <section id="available" className="w-full flex-wrap flex-col mb-4 p-2 md:p-6 text-justify place-content-center">
           <div className="flex 2xl:flex-row flex-col w-1/2 relative m-auto content-justify content-center align-middle items-center text-center z-10" dangerouslySetInnerHTML={{__html: dictionary.available}}></div>
         </section>
-        <section id="trailer" className="w-full flex-wrap flex-col mt-3 p-2 md:p-6 text-justify place-content-center bg-roleover">
+        <section id="trailer" className="w-full flex-wrap flex-col mt-3 p-2 md:p-6 text-justify place-content-center bg-roleover shadow-lg">
           <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.booktrailer}</h2>
           <iframe className="h-60 md:h-96 w-full m-auto z-10 relative" loading="lazy" width="60%" height="30%" src={bookTrailerVideoSrc} frameBorder="0" allowFullScreen title="Book Trailer"></iframe>
         </section>
@@ -110,7 +76,7 @@ const Home: NextPage<NextPageContext> = (props: any) => {
           <h2 className="text-center text-roleover pt-2 pb-4 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.gallery}</h2>
           <PhotoSlider className="z-10 relative" styles={{width: "97%"}} slides={photos} />
         </section>
-        <section id="genie-tale" className="w-full flex-wrap flex-col mt-3 p-2 md:p-6 text-justify place-content-center bg-complementary">
+        <section id="genie-tale" className="w-full flex-wrap flex-col mt-3 p-2 md:p-6 text-justify place-content-center bg-complementary shadow-lg">
           <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.genieTale}</h2>
           <div className="flex-wrap md:flex-row flex-col z-10 relative">
             <iframe className="h-60 md:h-96 w-full" loading="lazy" width="60%" height="30%" src={genieVideoSrc} frameBorder="0" allowFullScreen title="Genie Trailer"></iframe>
@@ -118,12 +84,12 @@ const Home: NextPage<NextPageContext> = (props: any) => {
         </section>
         <section id="contact" className="w-full relative flex-wrap flex-col overflow-hidden mt-3 p-2 md:p-6 text-justify place-content-center">
           <PositionedImages images={Stars} />
-          <div className="md:w-1/4 w-1/2 h-full m-auto flex leading-8 font-rancho">
-            <Image id="genie-image" alt="genie" className="w-auto hidden md:flex" src="/images/genie.png" />
-            <div className="w-auto m-auto p-2 bg-white z-10">
-              <p className="my-2 text-4xl">{resources.contact.name}</p>
-              <p className="my-2 text-2xl">{resources.contact.mobile_number}</p>
-              <p className="my-2 text-3xl">{resources.contact.email}</p>
+          <div className="w-1/2 h-full m-auto flex leading-8 font-rancho">
+            <Image id="genie-image" alt="genie" className="w-60 hidden md:flex" src="/images/genie.png" />
+            <div className="flex flex-col my-2 p-1 bg-white justify-center aling-center z-10">
+              <p className="flex text-4xl">{resources.contact.name}</p>
+              <p className="flex text-2xl">{resources.contact.mobile_number}</p>
+              <p className="flex text-3xl">{resources.contact.email}</p>
             </div>
           </div>
         </section>
