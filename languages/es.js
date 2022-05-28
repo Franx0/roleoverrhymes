@@ -2,8 +2,8 @@ const es = {
   meta: {
     url: `https://www.roleoverhymes.com`,
     imageUrl: `https://drive.google.com/uc?export=view&id=1bNbHc_w4bkJzn0eDsDe18za0P2zVwSzR`,
-    title: `Role Over Rhymes`,
-    description: `Role Over Rhymes sitio oficial`,
+    title: `Role Over Rhymes: Diez poemas basados en cuentos infantiles populares escrito por Suzanne Sasse e ilustrado por June Laurie`,
+    description: `Sitio oficial de Role Over Rhymes. Una serie de diez poemas basados en los cuentos infantiles más populares. Suzanne Sasse escribe estos maravillosos poemas que son magnificamente ilustrados por June Laurie.`,
     author: `Suzanne Sasse`,
     keywords: `cuentos, rimas, niño, niños, niña, niñas, infantil`,
   },
