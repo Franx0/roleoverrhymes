@@ -95,8 +95,6 @@ const Home: NextPage<NextPageContext> = (props: any) => {
       </Head>
 
       <main className="flex flex-col px-0 items-center text-2xl font-roboto">
-        {/* <section id="stars" className="w-full flex relative">
-        </section> */}
         <section id="description" className="w-full relative flex-wrap flex-col w-full p-16 md:text-justify place-content-center">
           <PositionedImages images={Stars} />
           <div className="max-w-3xl m-auto leading-8" dangerouslySetInnerHTML={{__html: dictionary.description}}></div>
