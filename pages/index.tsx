@@ -84,11 +84,10 @@ const Home: NextPage<NextPageContext> = (props: any) => {
         <meta property="og:description" content={dictionary.meta.description} key="ogdesc" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" key="twcard" />
-        <meta property="twitter:url" content={dictionary.meta.url} />
-        <meta name="twitter:image" content={dictionary.meta.imageUrl} key="twimage" />
         <meta name="twitter:title" content={dictionary.meta.title} key="twtitle" />
         <meta name="twitter:description" content={dictionary.meta.description} key="twdesc" />
+        <meta name="twitter:card" content="summary_large_image" key="twcard" />
+        <meta name="twitter:image" content={dictionary.meta.imageUrl} key="twimage" />
 
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
