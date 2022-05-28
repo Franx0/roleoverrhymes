@@ -101,7 +101,7 @@ const Home: NextPage<NextPageContext> = (props: any) => {
           <div className="max-w-3xl m-auto leading-8 z-10 relative" dangerouslySetInnerHTML={{__html: dictionary.description}}></div>
         </section>
         <section id="available" className="w-full flex-wrap flex-col mb-4 p-2 md:p-6 text-justify place-content-center">
-          <div className="flex 2xl:flex-row flex-col w-1/2 relative m-auto content-justify content-center align-middle items-center text-center z-10" dangerouslySetInnerHTML={{__html: dictionary.available}}></div>
+          <div className="flex lg:flex-row flex-col w-full m-auto justify-center content-center align-middle items-center text-center z-10" dangerouslySetInnerHTML={{__html: dictionary.available}}></div>
         </section>
         <section id="trailer" className="w-full flex-wrap flex-col mt-3 p-2 md:p-6 text-justify place-content-center bg-roleover shadow-lg">
           <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.booktrailer}</h2>
