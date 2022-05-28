@@ -11,7 +11,6 @@ import "swiper/css/navigation";
 
 // Import Swiper Modules
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { setRevalidateHeaders } from 'next/dist/server/send-payload';
 
 interface SliderProps {
   slides: Array<FunctionComponent>

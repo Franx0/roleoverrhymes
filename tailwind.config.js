@@ -30,6 +30,10 @@ module.exports = {
         roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
         rancho: ['Rancho', 'cursive'],
       },
+      animation: {
+        'pulse-slow-3': 'pulse 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'pulse-slow-4': 'pulse 4s cubic-bezier(0, 0, 0.2, 1) infinite',
+      }
     },
   },
   variants: {},
