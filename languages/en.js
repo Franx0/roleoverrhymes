@@ -25,7 +25,7 @@ const en = {
   `,
   booktrailer: `Booktrailer`,
   gallery: `Gallery`,
-  genieTale: `Genie Tale`,
+  genieTale: `The Genie`,
   footer: {
     handmade: `<span class="flex-1 tracking-tighter md:tracking-normal">Designed & Developed by:</span><span class="flex-2 tracking-tighter md:tracking-normal">Ana Mejón&nbsp;&<a class="flex-end ml-1" title="Role Over Rhymes" target="_blank" href=https://github.com/Franx0/roleoverrhymes>Fran Moya</a></span>`
   },
