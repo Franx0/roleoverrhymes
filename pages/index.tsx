@@ -3,9 +3,13 @@ import type { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
 import { default as PhotoSlider } from '@/components/Slider';
 
+// Context
+import { useTracking } from '@/contexts/TrackingContext';
+
 // Components
-import Image from '@/components/shared/Image'
-import PositionedImages from '@/components/PositionedImages'
+import Image from '@/components/shared/Image';
+import PositionedImages from '@/components/PositionedImages';
+import Cookies from '@/components/Cookies';
 
 // Import Resources
 import resources from "@/resources/index";
@@ -47,6 +51,7 @@ const Stars = [
 
 const Home: NextPage<NextPageContext> = (props: any) => {
   const { dictionary }: { dictionary: any } = props;
+  const { logEvent } = useTracking();
   const { photoSrcs, bookTrailerVideoSrc, genieVideoSrc } : {
     photoSrcs: any;
     bookTrailerVideoSrc: string,
@@ -59,6 +64,10 @@ const Home: NextPage<NextPageContext> = (props: any) => {
       </div>
     )
   });
+  const availableButtons = dictionary.available.buttons;
+  const logGAEvent = (key: string) => {
+    logEvent({category: "available", action: "clicked", label: key});
+  };
 
   return (
     <div>
@@ -101,7 +110,22 @@ const Home: NextPage<NextPageContext> = (props: any) => {
           <div className="max-w-3xl m-auto leading-8 z-10 relative" dangerouslySetInnerHTML={{__html: dictionary.description}}></div>
         </section>
         <section id="available" className="w-full flex-wrap flex-col mb-4 p-2 md:p-6 text-justify place-content-center">
-          <div className="flex lg:flex-row flex-col w-full m-auto justify-center content-center align-middle items-center text-center z-10" dangerouslySetInnerHTML={{__html: dictionary.available}}></div>
+          <div className="flex lg:flex-row flex-col w-full m-auto justify-center content-center align-middle items-center text-center z-10">
+           <span className="flex mr-4 my-2 whitespace-nowrap">{dictionary.available.title}</span>
+             <div className="flex lg:flex-row flex-col items-center">
+              {
+                Object.keys(availableButtons).map((name: string) => {
+                  return (
+                    <span key={availableButtons[name]["name"]} className="m-1 px-3 button available" onClick={(e) => logGAEvent(e.target.key)} >
+                      <a href={availableButtons[name]["src"]} rel="noreferrer" target="_blank">
+                        {availableButtons[name]["name"]}
+                      </a>
+                    </span>
+                  )
+                })
+              }
+             </div>
+          </div>
         </section>
         <section id="trailer" className="w-full flex-wrap flex-col mt-3 p-2 md:p-6 text-justify place-content-center bg-roleover shadow-lg">
           <h2 className="text-center text-white pt-2 md:pt-0 my-2 md:mb-6 font-rancho text-4xl z-10 relative">{dictionary.booktrailer}</h2>
@@ -129,6 +153,8 @@ const Home: NextPage<NextPageContext> = (props: any) => {
           </div>
         </section>
       </main>
+
+      <Cookies className="cookies-container" />
 
       <footer className="flex border-t p-4 px-5 md:items-center md:justify-between font-roboto z-10 relative" dangerouslySetInnerHTML={{__html: dictionary.footer.handmade}}></footer>
     </div>

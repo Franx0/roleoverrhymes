@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 // Contexts
 import { LanguageProvider, LanguageContext } from '@/contexts/LanguageContext';
+import { TrackingProvider } from '@/contexts/TrackingContext';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [reRender, setReRender] = useState(false);
@@ -19,9 +20,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <LanguageProvider>
       <Header />
-      <LanguageContext.Consumer>
-        { (locale) => (reRender && <Component {...pageProps} {...locale} />)}
-      </LanguageContext.Consumer>
+      <TrackingProvider >
+        <LanguageContext.Consumer>
+            { (locale) => (reRender && <Component {...pageProps} {...locale} />)}
+        </LanguageContext.Consumer>
+      </TrackingProvider>
     </LanguageProvider>
   )
 }
