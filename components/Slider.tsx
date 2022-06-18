@@ -28,7 +28,7 @@ const Slider: FunctionComponent<any> = (props: SliderProps) => {
         centeredSlides={true}
         speed={400}
         autoplay={{
-          delay: 2500,
+          delay: 10000,
           disableOnInteraction: false,
         }}
         pagination={{
