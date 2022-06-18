@@ -101,7 +101,7 @@ const TrackingProvider = ({ children }: any) => {
       (window as any)[disabled] = true;
 
       ['_ga', '_gid', '_gat'].forEach ((cookieName: string) => {
-        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=None; Secure`;
       });
     } else {
       Router.events.on('routeChangeComplete', handleRouteChange);
