@@ -11,10 +11,11 @@ import { useTracking } from '@/contexts/TrackingContext';
 const Cookies: FunctionComponent<any> = (props: any) => {
   const {className} = props;
   const locale = useLanguage();
-  const { updateAnalytics } = useTracking();
+  const { updateAnalytics, logEvent } = useTracking();
 
   const accept = () => {
     updateAnalytics("initialize", true);
+    logEvent({category: "consent", action: "click", label: "accept"});
   };
 
   const reject = () => {

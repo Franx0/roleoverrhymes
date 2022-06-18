@@ -1,17 +1,35 @@
 // React
 import React, { useState, useEffect } from  'react';
 // Nextjs
-import Router, { useRouter } from 'next/router';
+import Router from 'next/router';
 // GA
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 // Consent
 import { getCookieConsentValue } from "react-cookie-consent";
 
-const TrackingID: string = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || "fake";
-const TrackingContext = React.createContext(null);
+interface ContextParameters {
+  addTracker: (trackerName: string) => void,
+  removeTracker: (trackerName: string) => void,
+  logEvent: ({ category, action, label }: LogEventParameters) => void,
+  updateAnalytics: (type: string, value: boolean) => void
+};
+
+interface LogEventParameters {
+  category: string | undefined,
+  action: string | undefined,
+  label: string | undefined
+};
+
 const isEnv: Function = (env: string): Boolean => {
   return process.env.NODE_ENV === env
 };
+const TrackingID: string = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || "fake";
+const TrackingContext = React.createContext<ContextParameters>({
+  addTracker: (trackerName: string) => {},
+  removeTracker: (trackerName: string) => {},
+  logEvent: ({ category, action, label }: LogEventParameters) => {},
+  updateAnalytics: (type: string, value: boolean) => {}
+});
 
 const TrackingProvider = ({ children }: any) => {
   const consent: boolean = getCookieConsentValue() === "true";
@@ -24,12 +42,12 @@ const TrackingProvider = ({ children }: any) => {
 
   const handleRouteChange = (url: string) => {
     ReactGA.set({ page:  url });
-    ReactGA.pageview(url);
+    ReactGA.send("pageview");
   };
 
   const addTracker = (trackerName: string) => {
     if (analytics.isInitialized) {
-      ReactGA.addTrackers([{
+      ReactGA.initialize([{
         trackingId: TrackingID,
         gaOptions: {
           name:  trackerName
@@ -49,7 +67,8 @@ const TrackingProvider = ({ children }: any) => {
     }
   };
 
-  const logEvent = ({category = "", action = "", label = ""}) => {
+  const logEvent = (
+    {category = "", action = "", label = ""}: LogEventParameters) => {
     if (analytics.isInitialized) {
       ReactGA.event({category, action, label})
     }
@@ -66,10 +85,10 @@ const TrackingProvider = ({ children }: any) => {
 
     if (consent) {
       ReactGA.initialize(TrackingID, {
-        debug: isEnv("development"),
         testMode: isEnv("development"),
-        titleCase: false,
         gaOptions: {
+          titleCase: false,
+          debug_mode: true,
           cookieFlags: "SameSite=None; Secure",
         }
       });
@@ -79,8 +98,8 @@ const TrackingProvider = ({ children }: any) => {
 
     if (isDeclined) {
       const disabled: string = `ga-disable-${TrackingID}`;
+      (window as any)[disabled] = true;
 
-      window[disabled] = true;
       ['_ga', '_gid', '_gat'].forEach ((cookieName: string) => {
         document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
       });

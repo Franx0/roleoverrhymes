@@ -65,8 +65,8 @@ const Home: NextPage<NextPageContext> = (props: any) => {
     )
   });
   const availableButtons = dictionary.available.buttons;
-  const logGAEvent = (key: string) => {
-    logEvent({category: "available", action: "clicked", label: key});
+  const handleClick = (name: string) => {
+    logEvent({category: "available", action: "click", label: name});
   };
 
   return (
@@ -116,8 +116,8 @@ const Home: NextPage<NextPageContext> = (props: any) => {
               {
                 Object.keys(availableButtons).map((name: string) => {
                   return (
-                    <span key={availableButtons[name]["name"]} className="m-1 px-3 button available" onClick={(e) => logGAEvent(e.target.key)} >
-                      <a href={availableButtons[name]["src"]} rel="noreferrer" target="_blank">
+                    <span key={availableButtons[name]["name"]} className="m-1 px-3 button available" onClick={(e) => handleClick(availableButtons[name]["name"])} >
+                      <a href={availableButtons[name]["src"]} rel="noreferrer" target="_blank" title={availableButtons[name]["name"]}>
                         {availableButtons[name]["name"]}
                       </a>
                     </span>
