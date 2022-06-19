@@ -42,7 +42,7 @@ const TrackingProvider = ({ children }: any) => {
 
   const handleRouteChange = (url: string) => {
     ReactGA.set({ page:  url });
-    ReactGA.send("pageview");
+    ReactGA.send({ hitType: "pageview" });
   };
 
   const addTracker = (trackerName: string) => {
@@ -69,8 +69,13 @@ const TrackingProvider = ({ children }: any) => {
 
   const logEvent = (
     {category = "", action = "", label = ""}: LogEventParameters) => {
+
     if (analytics.isInitialized) {
-      ReactGA.event({category, action, label})
+      ReactGA.event({
+        category: category,
+        action: action,
+        label: label
+      })
     }
   };
 
@@ -88,7 +93,7 @@ const TrackingProvider = ({ children }: any) => {
         testMode: isEnv("development"),
         gaOptions: {
           titleCase: false,
-          debug_mode: true,
+          debug_mode: isEnv("development"),
           cookieFlags: "SameSite=None; Secure",
         }
       });
@@ -109,8 +114,8 @@ const TrackingProvider = ({ children }: any) => {
   }
 
   useEffect(() => {
-    initializeGA(analytics);
-  }, [analytics.initialize, analytics.isInitialized, analytics.isDeclined]);
+    if (!analytics.isInitialized && consent) initializeGA(analytics);
+  }, [analytics, consent]);
 
   return (
     <TrackingContext.Provider value={{ addTracker, removeTracker, logEvent, updateAnalytics }}>
