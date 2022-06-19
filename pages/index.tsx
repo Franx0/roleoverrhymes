@@ -66,7 +66,7 @@ const Home: NextPage<NextPageContext> = (props: any) => {
   });
   const availableButtons = dictionary.available.buttons;
   const handleClick = (name: string) => {
-    logEvent({category: "available", action: "click", label: name});
+    logEvent({category: "available", action: "click_button", name: name});
   };
 
   return (

@@ -10,14 +10,14 @@ import { getCookieConsentValue } from "react-cookie-consent";
 interface ContextParameters {
   addTracker: (trackerName: string) => void,
   removeTracker: (trackerName: string) => void,
-  logEvent: ({ category, action, label }: LogEventParameters) => void,
+  logEvent: ({ category, action, name }: LogEventParameters) => void,
   updateAnalytics: (type: string, value: boolean) => void
 };
 
 interface LogEventParameters {
   category: string | undefined,
   action: string | undefined,
-  label: string | undefined
+  name: string | undefined
 };
 
 const isEnv: Function = (env: string): Boolean => {
@@ -27,7 +27,7 @@ const TrackingID: string = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || "fake";
 const TrackingContext = React.createContext<ContextParameters>({
   addTracker: (trackerName: string) => {},
   removeTracker: (trackerName: string) => {},
-  logEvent: ({ category, action, label }: LogEventParameters) => {},
+  logEvent: ({ category, action, name }: LogEventParameters) => {},
   updateAnalytics: (type: string, value: boolean) => {}
 });
 
@@ -68,13 +68,12 @@ const TrackingProvider = ({ children }: any) => {
   };
 
   const logEvent = (
-    {category = "", action = "", label = ""}: LogEventParameters) => {
+    {category = "", action = "", name = ""}: LogEventParameters) => {
 
     if (analytics.isInitialized) {
-      ReactGA.event({
+      ReactGA.event(action, {
         category: category,
-        action: action,
-        label: label
+        name: name
       })
     }
   };

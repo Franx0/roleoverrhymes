@@ -15,7 +15,7 @@ const Cookies: FunctionComponent<any> = (props: any) => {
 
   const accept = () => {
     updateAnalytics("initialize", true);
-    logEvent({category: "consent", action: "click", label: "accept"});
+    logEvent({category: "consent", action: "click", name: "accept"});
   };
 
   const reject = () => {
