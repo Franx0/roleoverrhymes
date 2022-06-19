@@ -81,7 +81,10 @@ const TrackingProvider = ({ children }: any) => {
 
   const updateAnalytics = (type: string, value: boolean) => {
     setAnalytics((prev) => ({
-      ...prev, [type]: value
+      ...prev,
+      [type]: value,
+      isDeclined: !consent,
+      isInitialized: value && !isEnv("development")
     }));
   };
 
@@ -97,8 +100,6 @@ const TrackingProvider = ({ children }: any) => {
           cookieFlags: "SameSite=None; Secure",
         }
       });
-
-      setAnalytics(prev => ({...prev, isDeclined: !consent, isInitialized: isEnv("development") }));
     }
 
     if (isDeclined) {
@@ -114,8 +115,8 @@ const TrackingProvider = ({ children }: any) => {
   }
 
   useEffect(() => {
-    if (!analytics.isInitialized && consent) initializeGA(analytics);
-  }, [analytics, consent]);
+    if (analytics.initialize && consent) initializeGA(analytics);
+  }, [analytics]);
 
   return (
     <TrackingContext.Provider value={{ addTracker, removeTracker, logEvent, updateAnalytics }}>
