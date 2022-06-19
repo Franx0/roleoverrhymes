@@ -20,8 +20,8 @@ const resources = {
     '12': 'https://drive.google.com/uc?export=view&id=1498-uUGAKMiR4qAtR5I1nOlH7U6QO-l7',
     '13': 'https://drive.google.com/uc?export=view&id=1SorIStpJ4KpkcDv43XyiB2oYGnYHXu-s'
   },
-  bookTrailerVideoSrc: 'https://player.vimeo.com/video/709826959?h=a253245fd0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-  genieVideoSrc: 'https://player.vimeo.com/video/709828414?h=a253245fd0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+  bookTrailerVideoSrc: 'https://player.vimeo.com/video/709826959?h=a253245fd0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&dnt=1',
+  genieVideoSrc: 'https://player.vimeo.com/video/709828414?h=a253245fd0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&dnt=1'
 };
 
 export default resources
