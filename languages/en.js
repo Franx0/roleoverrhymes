@@ -7,7 +7,7 @@ const en = {
   },
   meta: {
     url: `https://www.roleoverhymes.com`,
-    imageUrl: `https://drive.google.com/uc?export=view&id=1bNbHc_w4bkJzn0eDsDe18za0P2zVwSzR`,
+    imageUrl: `https://drive.google.com/thumbnail?id=1bNbHc_w4bkJzn0eDsDe18za0P2zVwSzR&sz=w1000`,
     title: `Role Over Rhymes: Ten original fairytale rhymes by Suzanne Sasse and June Laurie`,
     description: `Role Over Rhymes official site. A series of ten poems based on the most popular children's stories. Suzanne Sasse writes these wonderful poems that are beautifully illustrated by June Laurie.`,
     author: `Suzanne Sasse`,

@@ -1,5 +1,3 @@
-// Nextjs
-import { useRouter } from 'next/router';
 // React
 import { FunctionComponent } from 'react';
 // Components
